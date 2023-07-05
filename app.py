@@ -10,6 +10,12 @@ api = Api(app)
 class Home(Resource):
     def get(self):
         return make_response("HOWDY")
+    
+#custom route for webscraper
+@app.route('/scrape')
+def getjobs():
+    return make_response("web scraper here")
+    
 
 api.add_resource(Home, '/')
 
