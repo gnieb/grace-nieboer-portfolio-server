@@ -1,6 +1,8 @@
 # Grace Nieboer Portfolio Server
 ## About
-this pairs with the front end portfolio repo [HERE]()
+This application was originally developed to help me get a job at a company I REALLY wanted to work for, but they didn't have the jobs posted that fit my qualifications. 
+**Enter JobWave.**
+
 
 ## Web scraper Notes
 
