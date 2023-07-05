@@ -16,6 +16,7 @@ importlib-metadata = "*"
 importlib-resources = "*"
 psycopg2-binary = "*"
 requests = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 
