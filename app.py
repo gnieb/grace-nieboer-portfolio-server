@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_restful import Resource
 from flask import make_response
-from config import api, app
-
+from config import api, app, db
+from models import Job, Quote
 
 
 
