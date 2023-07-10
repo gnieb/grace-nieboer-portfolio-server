@@ -1,7 +1,7 @@
 from flask import Flask
-from flask_restful import Resource, Api
+from flask_restful import Resource
 from flask import make_response
-from config import api, app, db
+from config import api, app
 
 
 
