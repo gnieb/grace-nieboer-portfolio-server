@@ -11,10 +11,16 @@ def seed():
     print("creating tables")
     db.create_all()
 
-    q1 = Quote(quote='Lorem Ipsum', by='unknown')
+    q1 = Quote(quote="Quality > Quantity. Submit quality application where with each one, you're making personal connections", by='Laura')
     q2 = Quote(quote='You can do this', by='Kimmy')
+    q3 = Quote(quote="Don't slow down. Keep grinding.", by="April")
+    q4 = Quote(quote="Make sure you havea good commit history. Write out informative commit messages", by="David")
+    q5 = Quote(quote="Don't take rejection personally, and keep those emotions under wraps - be stoic. If you let it get to you, it will take you a while to get back on the horse", by="Gehrig")
+    q6 = Quote(quote="Learn how to test your own code. Start with unit testing", by="April")
+    q7 = Quote(quote="Don't stop grinding your data structures and algos. This is how you'll pass interviews", by="Megan")
+
     
-    db.session.add_all([q1, q2])
+    db.session.add_all([q1, q2, q3, q4, q5, q6, q7])
     db.session.commit() 
 
     print("done seeding!")
