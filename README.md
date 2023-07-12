@@ -9,6 +9,17 @@ This application was originally developed to help me get a job at a company I RE
 * ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) 
 * ![Beautiful Soup](https://img.shields.io/badge/beautiful_soup-%23121011.svg?style=for-the-badge&logo=data:python/svg?&color=ff69b4)
 
+## Features Completed
+- postgres database established
+- GUI configured wuth DBeaver
+- Job and Encouraging quote models/tables built
+- 
+
+
+## Features in progress
+- RESTful API 
+- Web Scraper to pull job positions for 'Software Engineer' from select company websites
+- Web Hook to send an email alert 
 
 ## Web scraper Notes
 
