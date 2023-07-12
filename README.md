@@ -4,6 +4,11 @@
 This application was originally developed to help me get a job at a company I REALLY wanted to work for, but they didn't have the jobs posted that fit my qualifications. 
 **Enter JobWave.**
 
+### Built with
+* ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
+* ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) 
+* ![Beautiful Soup](https://img.shields.io/badge/beautiful_soup-%23121011.svg?style=for-the-badge&logo=data:python/svg?&color=ff69b4)
+
 
 ## Web scraper Notes
 
@@ -14,3 +19,4 @@ how to bypass 403 forbidden -
 headers = {
     'user-agent':'copied user-agent header from dev tools'
 }
+
