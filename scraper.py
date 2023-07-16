@@ -16,9 +16,8 @@ class OddballScraper ():
         html = requests.get("https://oddball.io/jobs/", headers=headers)
         doc = BeautifulSoup(html.text, 'html.parser')
         # print(doc)
-        oddj = doc.select('.entry-content')[0].select('#oddball-jobs')[0]
-        jobs = oddj.select('div')[0]
-        print(jobs)
+        oddj = doc.find_all("div", class_="oddball-jobs")
+        print(oddj)
         
         job_list = []
         # for job in jobs:
@@ -29,13 +28,26 @@ class OddballScraper ():
         #     job_list.append(job)
 
         
-            
+class MindexScraper():
+
+    def __init__(self):
+        pass
+    def print_jobs(self):
+        html = requests.get("https://www.mindex.com/jobs")
+        doc = BeautifulSoup(html.text, 'html.parser')
+        jobs = doc.find_all( "h4")
+        # print(doc)
+        print(jobs)
+
+
 
 
 
 s1 = OddballScraper()
+s2 = MindexScraper()
 
 print(s1.print_jobs())
+print(s2.print_jobs())
  
 
 
