@@ -17,6 +17,7 @@ importlib-resources = "*"
 psycopg2-binary = "*"
 requests = "*"
 beautifulsoup4 = "*"
+selenium = "*"
 
 [dev-packages]
 
