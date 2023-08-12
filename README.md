@@ -21,6 +21,7 @@ This application was originally developed to help me get a job at a company I RE
 - RESTful API 
 - Web Scraper to pull job positions for 'Software Engineer' from select company websites
 - Web Hook to send an email alert 
+- Jobwave database needed to be deployed or hosted locally
 
 ## Web scraper Notes
 
@@ -31,4 +32,5 @@ how to bypass 403 forbidden -
 headers = {
     'user-agent':'copied user-agent header from dev tools'
 }
+
 
