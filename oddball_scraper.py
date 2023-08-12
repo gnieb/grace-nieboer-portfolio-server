@@ -10,3 +10,13 @@ import time
 import pandas as pd
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+# Define the URL
+url= "https://www.mindex.com/jobs"
+
+# load the web page
+driver.get(url)
+
+# set maximum time to load the web page in seconds
+driver.implicitly_wait(10)
+
