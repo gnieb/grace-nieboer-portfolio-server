@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask_restful import Resource
 from flask import make_response
 from config import api, app, db
-from models import Job, Quote
+from models import Job, Quote, Company
 
 
 
