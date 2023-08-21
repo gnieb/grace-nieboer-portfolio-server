@@ -1,14 +1,15 @@
-from models import Job, Quote
+from models import Job, Quote, Company
 from config import db, app
 
 
 def seed():
 
-    print("deleting tables")
+    print("deleting previous tables")
     Job.query.delete()
     Quote.query.delete()
+    Company.query.delete()
 
-    print("creating tables")
+    print("creating new tables")
     db.create_all()
 
     q1 = Quote(quote="Quality > Quantity. Submit quality application where with each one, you're making personal connections", by='Laura')
@@ -19,8 +20,11 @@ def seed():
     q6 = Quote(quote="Learn how to test your own code. Start with unit testing", by="April")
     q7 = Quote(quote="Don't stop grinding your data structures and algos. This is how you'll pass interviews", by="Megan")
 
+    c1 = Company(name="Oddball")
+    c2 = Company(name="Mindex")
+
     
-    db.session.add_all([q1, q2, q3, q4, q5, q6, q7])
+    db.session.add_all([q1, q2, q3, q4, q5, q6, q7, c1, c2])
     db.session.commit() 
 
     print("done seeding!")

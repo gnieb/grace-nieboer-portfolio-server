@@ -6,12 +6,16 @@ from sqlalchemy_serializer import SerializerMixin
 class Company(db.Model, SerializerMixin):
     __tablename__ = 'companies'
 
+    serialize_rules = ('-jobs',)
+
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String, nullable=False)
+    jobs = db.relationship('Job', backref='company')
 
 
 class Job(db.Model, SerializerMixin):
     __tablename__ = 'jobs'
+
 
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String, nullable = False)
