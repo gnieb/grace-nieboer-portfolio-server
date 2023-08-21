@@ -6,11 +6,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
-import pandas as pd
 
 
-def scrapeOddball ():
+def scrapeOddball():
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
@@ -35,6 +33,6 @@ def scrapeOddball ():
             'title':job_title
         }
         open_roles.append(new_job)
-    print(open_roles)
+    return open_roles
 
 

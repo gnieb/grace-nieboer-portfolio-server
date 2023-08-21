@@ -3,6 +3,7 @@ from flask_restful import Resource
 from flask import make_response
 from config import api, app, db
 from models import Job, Quote, Company
+import scraper
 
 
 
@@ -41,7 +42,8 @@ class Quotes(Resource):
 #custom route for webscraper
 @app.route('/scrape')
 def getjobs():
-    return make_response("web scraper here")
+    oddball_jobs = scraper.scrapeOddball()
+    return make_response(oddball_jobs)
     
 
 api.add_resource(Home, '/')
