@@ -1,53 +1,40 @@
-import requests
-from bs4 import BeautifulSoup
-import re
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+import pandas as pd
 
 
+def scrapeOddball ():
 
-class OddballScraper ():
-    
-    def __init__(self):
-        pass
-    
-    def print_jobs(self):
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
-            }
-        html = requests.get("https://oddball.io/jobs/", headers=headers)
-        doc = BeautifulSoup(html.text, 'html.parser')
-        # print(doc)
-        oddj = doc.find_all("div", class_="oddball-jobs")
-        print(oddj)
-        
-        job_list = []
-        # for job in jobs:
-        #     job = {
-        #         'title': job.select("p")[0]("a")[0].attrs("href")
-        #     }
-        #     print(job['title'])
-        #     job_list.append(job)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-        
-class MindexScraper():
+    # Define the URL
+    url= "https://oddball.io/jobs/"
 
-    def __init__(self):
-        pass
-    def print_jobs(self):
-        html = requests.get("https://www.mindex.com/jobs")
-        doc = BeautifulSoup(html.text, 'html.parser')
-        jobs = doc.find_all( "h4")
-        # print(doc)
-        print(jobs)
+    # load the web page
+    driver.get(url)
 
+    # set maximum time to load the web page in seconds
+    driver.implicitly_wait(10)
 
+    jobs = driver.find_elements(By.CLASS_NAME, 'job')
 
+    open_roles = []
 
-
-s1 = OddballScraper()
-s2 = MindexScraper()
-
-print(s1.print_jobs())
-print(s2.print_jobs())
- 
+    for job in jobs:
+        job_link = job.find_element(By.TAG_NAME, 'a').get_attribute('href')
+        job_title = job.find_element(By.CSS_SELECTOR, 'span.title').text
+        new_job = {
+            'link': job_link,
+            'title':job_title
+        }
+        open_roles.append(new_job)
+    print(open_roles)
 
 
