@@ -37,7 +37,10 @@ class Quotes(Resource):
         return make_response(newAd.to_dict(), 201)
 
 
-
+@app.route('/webhook', methods=["POST"])
+def hook():
+    print(request.data)
+    return "Hello World"
     
 #custom route for webscraper
 @app.route('/fetchjobs')
