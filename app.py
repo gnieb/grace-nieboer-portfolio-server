@@ -40,7 +40,7 @@ class Quotes(Resource):
 
     
 #custom route for webscraper
-@app.route('/scrape')
+@app.route('/fetchjobs')
 def getjobs():
     oddball_jobs = scraper.scrapeOddball()
     return make_response(oddball_jobs)
