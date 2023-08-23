@@ -20,6 +20,7 @@ beautifulsoup4 = "*"
 selenium = "*"
 webdriver-manager = "*"
 pandas = "*"
+linkedin-jobs-scraper = "*"
 
 [dev-packages]
 
