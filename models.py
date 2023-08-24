@@ -28,4 +28,16 @@ class Quote(db.Model, SerializerMixin):
     quote = db.Column(db.String, nullable = False)
     by = db.Column(db.String, nullable = False)
 
+class ToDo(db.Model, SerializerMixin):
+    __tablename__ = 'todos'
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String)
+    done = db.Column(db.Boolean)
+    
+    
+
+
+# do i need a user model? only if this was going to be for multiple people....
+
     

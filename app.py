@@ -2,12 +2,8 @@ from flask import Flask, request
 from flask_restful import Resource
 from flask import make_response
 from config import api, app, db
-from models import Job, Quote, Company
+from models import Job, Quote, Company, ToDo
 import scraper
-
-
-
-
 
 class Home(Resource):
     def get(self):
@@ -36,6 +32,10 @@ class Quotes(Resource):
         
         return make_response(newAd.to_dict(), 201)
 
+class ToDos(Resource):
+    def get(self):
+        tasks = [t.to_dict() for t in ToDo.query.all()]
+        return make_response(tasks, 200)
 
 @app.route('/webhook', methods=["POST"])
 def hook():
@@ -51,6 +51,7 @@ def getjobs():
 
 api.add_resource(Home, '/')
 api.add_resource(Quotes, '/quotes')
+api.add_resource(ToDos, '/todos' )
 
 
 if __name__ == '__main__':

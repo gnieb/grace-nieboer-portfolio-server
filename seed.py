@@ -1,4 +1,4 @@
-from models import Job, Quote, Company
+from models import Job, Quote, Company, ToDo
 from config import db, app
 
 
@@ -8,6 +8,7 @@ def seed():
     Job.query.delete()
     Quote.query.delete()
     Company.query.delete()
+    ToDo.query.delete()
 
     print("creating new tables")
     db.create_all()
@@ -23,8 +24,10 @@ def seed():
     c1 = Company(name="Oddball")
     c2 = Company(name="Mindex")
 
+    t1 = ToDo(title="add live clock", done=False)
+
     
-    db.session.add_all([q1, q2, q3, q4, q5, q6, q7, c1, c2])
+    db.session.add_all([q1, q2, q3, q4, q5, q6, q7, c1, c2, t1])
     db.session.commit() 
 
     print("done seeding!")
