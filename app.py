@@ -37,17 +37,17 @@ class ToDos(Resource):
         tasks = [t.to_dict() for t in ToDo.query.all()]
         return make_response(tasks, 200)
     def post(self):
-        title=request.get_json(['title'])
-        done=request.get_json(['done'])
-        prio=request.get_json(['prio'])
+        title=request.get_json()['title']
+        done=request.get_json()['done']
+        prio=request.get_json()['prio']
         try:
             newToDo = ToDo(
                 title=title,
-                done=done,
+                done=False,
                 prio=prio
             )
         except:
-            return make_response({"error":"validation error, please try again"}, 400)
+            return make_response({"error":"User validation error, please try again"}, 400)
         try:
             db.session.add(newToDo)
             db.session.commit()
