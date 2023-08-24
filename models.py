@@ -1,5 +1,6 @@
 from config import db
 from sqlalchemy_serializer import SerializerMixin
+from sqlalchemy.orm import validates
 
 
 
@@ -32,10 +33,16 @@ class ToDo(db.Model, SerializerMixin):
     __tablename__ = 'todos'
 
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String)
-    done = db.Column(db.Boolean)
+    title = db.Column(db.String, nullable=False )
+    done = db.Column(db.Boolean,)
+    prio = db.Column(db.String)
     
-    
+    @validates('prio')
+    def validate_prio(self, key, input):
+        validCategories = ['TODAY', 'THIS WEEK', 'THIS MONTH', 'THIS YEAR']
+        if input not in validCategories:
+            raise ValueError("Prio is not valid, choose another selection.")
+        return input
 
 
 # do i need a user model? only if this was going to be for multiple people....
