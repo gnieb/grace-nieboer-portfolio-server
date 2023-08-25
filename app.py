@@ -89,7 +89,7 @@ class ToDoById(Resource):
             db.session.commit()
         except:
             return make_response({"error":"Unable to delete To Do from database"}, 400)
-        return make_response({"Successfully Deleted!"}, 200)
+        return make_response({"message":"Successfully Deleted!"}, 200)
 
 @app.route('/webhook', methods=["POST"])
 def hook():
