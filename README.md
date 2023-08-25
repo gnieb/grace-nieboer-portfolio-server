@@ -12,17 +12,15 @@ This application was originally developed to help me get a job at a company I RE
 ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 
 ## Features Completed
-- postgres database established
-- GUI configured wuth DBeaver
+- SQLite3 lightweight database established with models
+- Web Driver installed and utilized to scrape dynamic data from selected company careers
 - Job and Encouraging quote models/tables built
-- 
+- RESTful API
 
 
 ## Features in progress
-- RESTful API 
-- Web Scraper to pull job positions for 'Software Engineer' from select company websites
-- Web Hook to send an email alert 
-- Jobwave database needed to be deployed or hosted locally
+- Web Scraper to pull startup 'Software Engineer' job positions from Wellfound (previously AngelList)
+
 
 ## Web scraper Notes
 
