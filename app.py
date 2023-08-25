@@ -80,6 +80,17 @@ class ToDoById(Resource):
             return make_response({"error":"Validation error, unprocessable entity"}, 422)
         return make_response(task.to_dict(), 200)
 
+    def delete(self, id):
+        task = ToDo.query.filter_by(id= id).first()
+        if not task:
+            return make_response({"error":"To Do Not Found"}, 404)
+        try:
+            db.session.delete(task)
+            db.session.commit()
+        except:
+            return make_response({"error":"Unable to delete To Do from database"}, 400)
+        return make_response({"Successfully Deleted!"}, 200)
+
 @app.route('/webhook', methods=["POST"])
 def hook():
     print(request.data)
