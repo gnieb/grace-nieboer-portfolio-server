@@ -14,22 +14,15 @@ This application was originally developed to help me get a job at a company I RE
 ## Features Completed
 - SQLite3 lightweight database established with models
 - Web Driver installed and utilized to scrape dynamic data from selected company careers
-- Job and Encouraging quote models/tables built
-- RESTful API
+**Note:** Selenium uses the binary driver to control the web browser of choice. This Python package provides binary drivers for the following supported web browsers: Chrome, Chromium, Brave, Firefox, IE, Edge, and Opera. Note that Safari is not supported.
+- Full CRUD actions for To do's model
+- RESTful API built
 
 
 ## Features in progress
 - Web Scraper to pull startup 'Software Engineer' job positions from Wellfound (previously AngelList)
 
 
-## Web scraper Notes
 
-how to bypass 403 forbidden - 
-1. inspect the page
-2. Network Tab -> refresh the page -> double click an item call with the same domain as the website -> headers tab --> scroll down to User Agent info and copy to clipboard -> create headers object like so:
-
-headers = {
-    'user-agent':'copied user-agent header from dev tools'
-}
 
 
