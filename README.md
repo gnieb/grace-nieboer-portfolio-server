@@ -1,15 +1,23 @@
 # JobSurge Server ⚡
-[Front-End Application Here](https://github.com/gnieb/jobwave)
+[Front-End Repo](https://github.com/gnieb/jobwave)
+
+![homepage](homescreenshot.png)
+![to_dos](todoscreenshot.png)
+
 ## About
-This application was originally developed to help me get a job at a company I REALLY wanted to work for, but they didn't have the jobs posted that fit my qualifications. 
-**Enter JobWave.**
+**SURGE [ v ]:** 
+**to move suddenly and powerfully forward or upward.** 
+
+This application is a career dashboard. It was originally developed to help me get a job at a company I REALLY wanted to work for, but at that time, they didn't have the jobs posted that fit my qualifications. 
+=> **Enter JobSurge.**
+I needed to develop a career dashboard to help me navigate my job search, organize my priorities, and categorize my goals by Day, Week, Month, and Year. JobSurge was built to navigate my transition from Human Resources into tech. 
 
 ### Built with
 * ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
 * ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) 
 * ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 * ![Beautiful Soup](https://img.shields.io/badge/beautiful_soup-%23121011.svg?style=for-the-badge&logo=data:python/svg?&color=ff69b4)
-![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+* ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 
 ## Features Completed
 - SQLite3 lightweight database established with models
